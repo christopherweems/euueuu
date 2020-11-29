@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Resultto",
+        "repositoryURL": "https://github.com/christopherweems/Resultto.git",
+        "state": {
+          "branch": null,
+          "revision": "33595e626d4cccdf61a375f0863803937e551c6f",
+          "version": "0.0.1"
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser",
+        "state": {
+          "branch": null,
+          "revision": "92646c0cdbaca076c8d3d0207891785b3379cbff",
+          "version": "0.3.1"
+        }
+      },
+      {
+        "package": "unstandard",
+        "repositoryURL": "https://github.com/christopherweems/unstandard",
+        "state": {
+          "branch": null,
+          "revision": "b3acfdbb35ba86ad4b7024f6c0a62a3267e93208",
+          "version": "0.0.6"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
