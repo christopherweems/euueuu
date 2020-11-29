@@ -36,3 +36,12 @@ internal class Pasteboard {
     }
     
 }
+
+extension Pasteboard {
+    static func general(_ updateHandler: (Pasteboard) -> Void) {
+        // TODO: Store general pasteboard as static var
+        let generalPasteboard = Pasteboard()
+        updateHandler(generalPasteboard)
+    }
+    
+}
