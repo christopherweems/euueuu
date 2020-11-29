@@ -8,21 +8,27 @@ struct UUIDGenerator: OutputResultParsableCommand {
     var copyToPasteboard = false
     
     mutating func run() throws {
-        let copyToPasteboard = self.copyToPasteboard
+        
+        /* Collect/generate program's output */
         
         UUID().formatted()
         
-        ResultHandler { lines in
-            let pasteboard = Pasteboard()
-            assert(lines.count == 1)
-            
-            if copyToPasteboard, let line = lines.first {
-                pasteboard.clearContents()
-                pasteboard.setString(line)
+        
+        /*  Fill Pasteboard with output from above */
+        
+        if copyToPasteboard {
+            ResultHandler { lines in
+                let lines = lines.joined(separator: "\n")
                 
+                Pasteboard.general {
+                    $0.clearContents()
+                    $0.setString(lines)
+                    
+                }
             }
             
         }
+        
     }
     
 }
