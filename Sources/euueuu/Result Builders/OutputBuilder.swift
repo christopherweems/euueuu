@@ -31,9 +31,16 @@ public extension OutputBuilder {
             
         }
         
-        _resultHandler(lines)
+        if !lines.isEmpty {
+            _resultHandler(lines)
+            resetOutputFunction()
+            
+        }
         
-        resetOutputFunction()
+    }
+    
+    static func buildOptional(_ nothing: Void?) -> String {
+        ignoredLine
     }
     
 }
