@@ -10,11 +10,13 @@ import Foundation
 @_functionBuilder
 public struct OutputBuilder {
     static var _function: OutputFunction = .print
+    static var _resultHandler: ResultHandler = .identity
     
     private static let ignoredLine = "#ignorethisline"
     
     private static func resetOutputFunction() {
         _function = .print
+        _resultHandler = .identity
         
     }
     
@@ -22,11 +24,14 @@ public struct OutputBuilder {
 
 public extension OutputBuilder {
     static func buildBlock(_ lines: String...) -> Void {
+        let lines = lines.filter { $0 != ignoredLine }
+        
         lines.forEach {
-            guard ignoredLine != $0 else { return }
             _function($0)
             
         }
+        
+        _resultHandler(lines)
         
         resetOutputFunction()
     }
@@ -34,8 +39,13 @@ public extension OutputBuilder {
 }
 
 public extension OutputBuilder {
-    static func buildExpression(_ propertySetter: OutputFunction) -> String {
-        _function = propertySetter
+    static func buildExpression(_ outputFunction: OutputFunction) -> String {
+        _function = outputFunction
+        return ignoredLine
+    }
+    
+    static func buildExpression(_ resultHandler: ResultHandler) -> String {
+        _resultHandler = resultHandler
         return ignoredLine
     }
     
