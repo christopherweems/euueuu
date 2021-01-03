@@ -42,11 +42,12 @@ struct UUIDGenerator: OutputResultParsableCommand {
         }
         
         if `repeat` {
-            var repeatedExecution = self
+            let nextExecution = self
             
             ResultHandler { _ in
                 guard let _ = readLine() else { return }
-                try! repeatedExecution.run()
+                var nextExecution = nextExecution
+                try! nextExecution.run()
                 
             }
             
