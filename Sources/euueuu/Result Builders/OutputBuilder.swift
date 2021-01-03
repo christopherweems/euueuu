@@ -10,13 +10,13 @@ import Foundation
 @_functionBuilder
 public struct OutputBuilder {
     static var _function: OutputFunction = .print
-    static var _resultHandler: ResultHandler = .identity
+    static var _resultHandlers: [ResultHandler] = []
     
     private static let ignoredLine = "#ignorethisline"
     
     private static func resetOutputFunction() {
         _function = .print
-        _resultHandler = .identity
+        _resultHandlers = []
         
     }
     
@@ -32,7 +32,7 @@ public extension OutputBuilder {
         }
         
         if !lines.isEmpty {
-            _resultHandler(lines)
+            _resultHandlers.forEach { $0(lines) }
             resetOutputFunction()
             
         }
@@ -52,7 +52,7 @@ public extension OutputBuilder {
     }
     
     static func buildExpression(_ resultHandler: ResultHandler) -> String {
-        _resultHandler = resultHandler
+        _resultHandlers.append(resultHandler)
         return ignoredLine
     }
     
