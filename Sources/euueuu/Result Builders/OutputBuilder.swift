@@ -40,7 +40,7 @@ public extension OutputBuilder {
     }
     
     static func buildOptional(_ nothing: Void?) -> String {
-        ignoredLine
+        return ignoredLine
     }
     
 }
@@ -57,7 +57,7 @@ public extension OutputBuilder {
     }
     
     static func buildExpression(_ value: String) -> String {
-        value
+        return value
     }
     
 }
