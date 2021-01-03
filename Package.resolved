@@ -6,8 +6,17 @@
         "repositoryURL": "https://github.com/christopherweems/Resultto.git",
         "state": {
           "branch": null,
-          "revision": "33595e626d4cccdf61a375f0863803937e551c6f",
-          "version": "0.0.1"
+          "revision": "d58a74b9cbbd837e9b6da8d7571bfe67b0645fbd",
+          "version": "0.0.3"
+        }
+      },
+      {
+        "package": "swift-algorithms",
+        "repositoryURL": "https://github.com/apple/swift-algorithms",
+        "state": {
+          "branch": null,
+          "revision": "bb3bafeca0e164ece3403a9de646b7d38c07dd49",
+          "version": "0.0.2"
         }
       },
       {
@@ -20,12 +29,30 @@
         }
       },
       {
+        "package": "swift-numerics",
+        "repositoryURL": "https://github.com/apple/swift-numerics",
+        "state": {
+          "branch": null,
+          "revision": "6b24333510e9044cf4716a07bed65eeed6bc6393",
+          "version": "0.0.8"
+        }
+      },
+      {
+        "package": "triple-q",
+        "repositoryURL": "https://github.com/christopherweems/triple-q.git",
+        "state": {
+          "branch": null,
+          "revision": "f58dac700310b3c240ba7ab69284444fef7b580a",
+          "version": "0.0.1"
+        }
+      },
+      {
         "package": "unstandard",
         "repositoryURL": "https://github.com/christopherweems/unstandard",
         "state": {
           "branch": null,
-          "revision": "b3acfdbb35ba86ad4b7024f6c0a62a3267e93208",
-          "version": "0.0.6"
+          "revision": "81c783a52724a89a8fb4929ebb7fadd9a416eda8",
+          "version": "0.0.10"
         }
       }
     ]
