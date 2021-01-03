@@ -10,6 +10,9 @@ struct UUIDGenerator: OutputResultParsableCommand {
     @Option(name: [.long, .customShort("f")], help: "Wrap output with a format")
     var outputFormat = FormattedOutput.defaultReplacementSpecifier
     
+    @Flag(name: .shortAndLong, help: "Repeat UUID generation (Press CTRL+D to quit)")
+    var `repeat` = false
+    
     mutating func run() throws {
         let outputFormatter = FormattedOutput(format: outputFormat)
         
@@ -33,6 +36,17 @@ struct UUIDGenerator: OutputResultParsableCommand {
                     $0.setString(lines)
                     
                 }
+                
+            }
+            
+        }
+        
+        if `repeat` {
+            var repeatedExecution = self
+            
+            ResultHandler { _ in
+                guard let _ = readLine() else { return }
+                try! repeatedExecution.run()
                 
             }
             
