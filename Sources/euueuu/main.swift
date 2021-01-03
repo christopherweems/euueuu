@@ -23,7 +23,10 @@ struct UUIDGenerator: OutputResultParsableCommand {
         
         if copyToPasteboard {
             ResultHandler { lines in
-                let lines = lines.joined(separator: "\n")
+                let lines = lines
+                    .map { $0.replacingOccurrences(of: .tab) }
+                    .flatMap { $0.components(separatedBy: DelimiterReplacement.newline.delimiter) }
+                    .joined(separator: "\n")
                 
                 Pasteboard.general {
                     $0.clearContents()
