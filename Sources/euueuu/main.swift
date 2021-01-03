@@ -7,11 +7,16 @@ struct UUIDGenerator: OutputResultParsableCommand {
     @Flag(name: .shortAndLong, help: "Copy result to pasteboard")
     var copyToPasteboard = false
     
+    @Option(name: [.long, .customShort("f")], help: "Wrap output with a format")
+    var outputFormat = FormattedOutput.defaultReplacementSpecifier
+    
     mutating func run() throws {
+        let outputFormatter = FormattedOutput(format: outputFormat)
         
         /* Collect/generate program's output */
         
         UUID().formatted()
+            .wrap { outputFormatter($0) }
         
         
         /*  Fill Pasteboard with output from above */
@@ -25,9 +30,15 @@ struct UUIDGenerator: OutputResultParsableCommand {
                     $0.setString(lines)
                     
                 }
+                
             }
             
         }
+        
+    }
+    
+    func validate() throws {
+        try FormattedOutput(validate: outputFormat)
         
     }
     
