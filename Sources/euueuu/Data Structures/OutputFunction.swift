@@ -20,7 +20,12 @@ public struct OutputFunction: BodiedFunction {
 
 extension OutputFunction {
     static var print: Self {
-        Self { Swift.print($0) }
+        Self {
+            $0.replacingOccurrences(of: .tab)
+                .components(separatedBy: DelimiterReplacement.newline.delimiter)
+                .forEach { Swift.print($0) }
+            
+        }
     }
     
 }
