@@ -7,7 +7,7 @@
 
 import Foundation
 
-@_functionBuilder
+@resultBuilder
 public struct OutputBuilder {
     static var _function: OutputFunction = .print
     static var _resultHandlers: [ResultHandler] = []
