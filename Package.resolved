@@ -6,17 +6,17 @@
         "repositoryURL": "https://github.com/christopherweems/Resultto.git",
         "state": {
           "branch": null,
-          "revision": "d58a74b9cbbd837e9b6da8d7571bfe67b0645fbd",
-          "version": "0.0.3"
+          "revision": "9069c748af9a6ce8a0bbd9d5493a90649fdb94b8",
+          "version": "0.1.1"
         }
       },
       {
         "package": "swift-algorithms",
-        "repositoryURL": "https://github.com/apple/swift-algorithms",
+        "repositoryURL": "https://github.com/apple/swift-algorithms.git",
         "state": {
           "branch": null,
-          "revision": "bb3bafeca0e164ece3403a9de646b7d38c07dd49",
-          "version": "0.0.2"
+          "revision": "2327673b0e9c7e90e6b1826376526ec3627210e4",
+          "version": "0.2.1"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/apple/swift-argument-parser",
         "state": {
           "branch": null,
-          "revision": "92646c0cdbaca076c8d3d0207891785b3379cbff",
-          "version": "0.3.1"
+          "revision": "83b23d940471b313427da226196661856f6ba3e0",
+          "version": "0.4.4"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/apple/swift-numerics",
         "state": {
           "branch": null,
-          "revision": "6b24333510e9044cf4716a07bed65eeed6bc6393",
-          "version": "0.0.8"
+          "revision": "6583ac70c326c3ee080c1d42d9ca3361dca816cd",
+          "version": "0.1.0"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/christopherweems/unstandard",
         "state": {
           "branch": null,
-          "revision": "81c783a52724a89a8fb4929ebb7fadd9a416eda8",
-          "version": "0.0.10"
+          "revision": "5e79ea49b939eae9d32f55d66497aa86d03fb888",
+          "version": "0.2.3"
         }
       }
     ]
